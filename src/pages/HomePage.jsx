@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
-import HomeCoverSection from '../components/HomeCOverSection'
+import HomeCoverSection from '../components/HomeCoverSection'
 import PopularSearch from '../components/PopularSearch'
 import JobOpeningsSection from '../components/JobOpeningsSection'
 import Footer from '../components/Footer'
