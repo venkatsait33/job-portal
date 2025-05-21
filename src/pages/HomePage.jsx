@@ -23,7 +23,7 @@ const HomePage = () => {
                 </div>
                 <div className='bg-white max-sm:p-4 md:p-8 '>
 
-                    <div className='bg-[#F9F4FF] text-[#662194] flex items-center justify-center border rounded-l-2xl md:w-[80%] mx-auto md:h-[350px] md:gap-12 p-2 '>
+                    <div className='bg-[#F9F4FF] text-[#662194] flex items-center justify-center border rounded-l-2xl md:w-[80%] mx-auto md:h-[350px] md:gap-12 p-2 max-sm:h-[170px] '>
                         <div>
                             <h1 className='font-bold md:text-3xl'>Download Apna app!</h1>
                             <div className='flex gap-2 max-sm:flex-col max-sm:text-sm'>
