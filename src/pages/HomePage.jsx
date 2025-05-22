@@ -10,7 +10,7 @@ import { MdFileDownload } from "react-icons/md";
 const HomePage = () => {
     return (
         <div className=''>
-            <NavBar />
+           
             <div className=''>
                 <HomeCoverSection />
                 <PopularSearch />
@@ -26,7 +26,7 @@ const HomePage = () => {
                     <div className='bg-[#F9F4FF] text-[#662194] flex items-center justify-center border rounded-l-2xl md:w-[80%] mx-auto md:h-[350px] md:gap-12 p-2 max-sm:h-[170px] '>
                         <div>
                             <h1 className='font-bold md:text-3xl'>Download Apna app!</h1>
-                            <div className='flex gap-2 max-sm:flex-col max-sm:text-sm'>
+                            <div className='gap-2 mt-2 lg:flex max-md:flex-col max-sm:flex-col max-sm:text-sm'>
                                 <p>Unlimited job applications | </p>
                                 <p>HRs contact you directly | </p>
                                 <p>Track your Applications</p>

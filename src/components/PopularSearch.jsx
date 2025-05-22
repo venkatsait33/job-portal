@@ -43,17 +43,17 @@ const PopularSearch = () => {
     const [hoveredCard, setHoveredCard] = useState(null);
     return (
         <div className='flex items-center justify-center max-w-screen'>
-            <div className="flex ">
+            <div className="flex p-2 ">
 
                 <div className='grid gap-10 md:grid-cols-2'>
-                    <div className='w-[200px] flex'><h1 className='text-base lg:text-[44px]'>Popular Search on Apna</h1></div>
+                    <div className=' flex max-sm:items-center max-sm:justify-center'><h1 className='text-base max-sm:text-xl max-sm:text-center text-[44px]'>Popular Search on Apna</h1></div>
 
                     {cardsData.map((card) => (
                         <div
                             key={card.id}
                             onMouseEnter={() => setHoveredCard(card.id)}
                             onMouseLeave={() => setHoveredCard(null)}
-                            className="transition-all duration-300 border-3  rounded-lg shadow-sm lg:card-side card bg-[#FCFCFC] text-black md:h-[250px] "
+                            className="transition-all duration-300 border-3  rounded-lg shadow-sm md:card-side card bg-[#FCFCFC] text-black md:h-[250px] "
                             style={{
                                 borderColor: hoveredCard === card.id ? card.color : "",
                             }}
