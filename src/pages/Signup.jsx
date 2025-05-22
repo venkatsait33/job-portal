@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { USER_API_END_POINT } from '../utils/constant';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
     const [input, setInput] = useState({
-        username: '',
+        fullname: '',
         email: '',
         phoneNumber: '',
         password: '',
@@ -17,10 +20,44 @@ const Signup = () => {
     const changeFileHandler = (e) => {
         setInput({ ...input, file: e.target.files[0] })
     }
+
+    const navigate = useNavigate()
+
     const submitHandler = async (e) => {
         e.preventDefault();
-        console.log(input);
+        //we append all data into formdata with files
+        const formData = new FormData();
+        formData.append('fullname', input.fullname);
+        formData.append('email', input.email);
+        formData.append('phoneNumber', input.phoneNumber);
+        formData.append('password', input.password);
+        formData.append('role', input.role);
+
+        if (input.file) {
+            formData.append('file', input.file);
+        }
+
+        console.log(formData);
+         try {
+             const res = await axios.post(`${USER_API_END_POINT}/register`, formData, {
+                 headers: {
+                     "Content-Type": "multipart/form-data",
+                 },
+                 withCredentials: true,
+             }
+             );
+ 
+             if (res.data.success) {
+                 navigate('/login');
+                 toast.success(res.data.message);
+             }
+             console.log(res.data);
+         } catch (error) {
+             toast.error(error.response.data.message);
+             console.log(error);
+         }
     }
+
     return (
         <div className='flex items-center justify-center min-h-screen '>
             <div className="w-full max-w-sm shadow-2xl card bg-base-100 shrink-0">
@@ -31,8 +68,8 @@ const Signup = () => {
                         <div className="fieldset">
                             <div>
                                 <label className="label">User Name</label>
-                                <input type="text" name='username' className="input"
-                                    value={input.username}
+                                <input type="text" name='fullname' className="input"
+                                    value={input.fullname}
                                     onChange={changeEventHandler}
                                     placeholder="User Name" />
                             </div>
