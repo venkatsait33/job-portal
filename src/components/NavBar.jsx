@@ -60,9 +60,9 @@ const NavBar = () => {
                 <Link to='/signup' className=' font-semibold  text-[#1F8268]'>
                     Sign up
                 </Link>
-                <button className='btn max-sm:btn-sm bg-[#1F8268] hover:bg-white hover:border-[#1F8268] hover:text-[#1F8268]'>
+                <Link to='/login' className='btn max-sm:btn-sm bg-[#1F8268] hover:bg-white hover:border-[#1F8268] hover:text-[#1F8268]'>
                     Login
-                </button>
+                </Link>
             </div>
         </div>
     )
